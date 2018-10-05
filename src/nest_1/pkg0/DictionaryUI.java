@@ -10,23 +10,31 @@ import javax.swing.DefaultListModel;
 import javax.swing.JScrollBar;
 import javax.swing.UIManager;
 
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
+
 public class DictionaryUI extends javax.swing.JFrame {
     final String EV = "D:\\Nest_1.0\\Nest_1.0\\src\\nest_1\\pkg0\\E_V.txt";
     final String VE = "D:\\Nest_1.0\\Nest_1.0\\src\\nest_1\\pkg0\\V_E.txt";
+    
+    VoiceManager vm;
+    Voice v;
+    
     public DictionaryUI() {
         initComponents();
         setTitle("Nest-Dictionary");
-        hm = new HashMap<>();
-        keys = new ArrayList<>();
+        
         setLocation(400,150);
         //loadDataIntoMap(EV);
     }
 
     public void loadDataIntoMap(String path)
     {
+        hm = new HashMap<>();
+        keys = new ArrayList<>();
         String line,word,s;
         mod = new DefaultListModel<>();
-        list.setModel(mod);
+        
         try
         {
             BufferedReader br = new BufferedReader(new FileReader(path));
@@ -40,6 +48,7 @@ public class DictionaryUI extends javax.swing.JFrame {
                 keys.add(word);
                 mod.addElement(word);
             }
+            list.setModel(mod);
             br.close();
         } catch (IOException e)
         {
@@ -66,8 +75,8 @@ public class DictionaryUI extends javax.swing.JFrame {
         evButton = new javax.swing.JRadioButton();
         veButton = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        speakButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(650, 530));
@@ -152,7 +161,7 @@ public class DictionaryUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(modifyButton);
-        modifyButton.setBounds(420, 100, 94, 30);
+        modifyButton.setBounds(410, 100, 94, 30);
 
         addButton.setIcon(new javax.swing.ImageIcon("D:\\Nest_1.0\\Nest_1.0\\img\\add.gif")); // NOI18N
         addButton.setText("Add");
@@ -162,7 +171,7 @@ public class DictionaryUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(addButton);
-        addButton.setBounds(530, 100, 94, 30);
+        addButton.setBounds(510, 100, 94, 30);
 
         evButton.setBackground(new java.awt.Color(255, 153, 0));
         buttonGroup1.add(evButton);
@@ -196,15 +205,19 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(230, 460, 399, 13);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Nest_1.0\\Nest_1.0\\img\\background.jpg")); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(-270, 0, 930, 500);
-
         jLabel5.setIcon(new javax.swing.ImageIcon("D:\\Nest_1.0\\Nest_1.0\\img\\add.gif")); // NOI18N
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(220, 100, 50, 30);
+
+        speakButton.setText("Speak");
+        speakButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                speakButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(speakButton);
+        speakButton.setBounds(330, 70, 80, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -237,6 +250,7 @@ public class DictionaryUI extends javax.swing.JFrame {
 
     private void listValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listValueChanged
         // TODO add your handling code here:
+        
         if(!list.isSelectionEmpty()){
             int index = list.getSelectedIndex();
             String w = keys.get(index);
@@ -290,7 +304,7 @@ public class DictionaryUI extends javax.swing.JFrame {
     }//GEN-LAST:event_evButtonActionPerformed
 
     private void veButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veButtonActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: 
         loadDataIntoMap(VE);
     }//GEN-LAST:event_veButtonActionPerformed
 
@@ -298,6 +312,16 @@ public class DictionaryUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         jTextField1.setText("");
     }//GEN-LAST:event_jTextField1MouseClicked
+
+    private void speakButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speakButtonActionPerformed
+        // TODO add your handling code here:
+        String speak = jTextField1.getText();
+        System.setProperty("mbrola.base", "mbrola");
+        vm = VoiceManager.getInstance();
+        v = vm.getVoice("mbrola_us1");
+        v.allocate();
+        v.speak(speak);
+    }//GEN-LAST:event_speakButtonActionPerformed
 
     public int searchBinary(String w, ArrayList<String> k)
     {
@@ -371,14 +395,6 @@ public class DictionaryUI extends javax.swing.JFrame {
         //</editor-fold>
         
         /* Create and display the form */
-        try
-        {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAnđFeel");
-        }
-        catch(Exception ex)
-                {
-                    
-                }
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -396,7 +412,6 @@ public class DictionaryUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -404,6 +419,7 @@ public class DictionaryUI extends javax.swing.JFrame {
     private javax.swing.JList<String> list;
     private javax.swing.JButton modifyButton;
     private javax.swing.JButton removeButton;
+    private javax.swing.JButton speakButton;
     private javax.swing.JEditorPane txtHTML;
     private javax.swing.JRadioButton veButton;
     // End of variables declaration//GEN-END:variables
