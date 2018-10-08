@@ -50,11 +50,11 @@ public class DictionaryUI extends javax.swing.JFrame {
             }
             list.setModel(mod);
             br.close();
-        } catch (IOException e)
+        }catch (IOException e)
         {
             e.printStackTrace();
         }
-        //Collections.sort(keys);
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -217,7 +217,7 @@ public class DictionaryUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(speakButton);
-        speakButton.setBounds(330, 70, 80, 23);
+        speakButton.setBounds(300, 70, 70, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
