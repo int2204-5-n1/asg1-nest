@@ -212,7 +212,7 @@ public class DictionaryUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(speakButton);
-        speakButton.setBounds(340, 70, 70, 23);
+        speakButton.setBounds(370, 70, 70, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
