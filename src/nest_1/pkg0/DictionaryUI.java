@@ -10,15 +10,15 @@ import javax.swing.DefaultListModel;
 import javax.swing.JScrollBar;
 import javax.swing.UIManager;
 
-import com.sun.speech.freetts.Voice;
-import com.sun.speech.freetts.VoiceManager;
+/*import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;*/
 
 public class DictionaryUI extends javax.swing.JFrame {
     final String EV = "D:\\Nest_1.0\\Nest_1.0\\src\\nest_1\\pkg0\\E_V.txt";
     final String VE = "D:\\Nest_1.0\\Nest_1.0\\src\\nest_1\\pkg0\\V_E.txt";
     
-    VoiceManager vm;
-    Voice v;
+   /// VoiceManager vm;
+   // Voice v;
     
     public DictionaryUI() {
         initComponents();
@@ -108,7 +108,6 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(jTextField1);
         jTextField1.setBounds(10, 100, 180, 30);
 
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\Nest_1.0\\Nest_1.0\\img\\find.gif")); // NOI18N
         jButton1.setText("Search");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +142,6 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(301, 135, 328, 319);
 
-        removeButton.setIcon(new javax.swing.ImageIcon("D:\\Nest_1.0\\Nest_1.0\\img\\delete.gif")); // NOI18N
         removeButton.setText("Remove");
         removeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,7 +151,6 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(removeButton);
         removeButton.setBounds(300, 100, 110, 30);
 
-        modifyButton.setIcon(new javax.swing.ImageIcon("D:\\Nest_1.0\\Nest_1.0\\img\\edit.gif")); // NOI18N
         modifyButton.setText("Modify");
         modifyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +160,6 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(modifyButton);
         modifyButton.setBounds(410, 100, 94, 30);
 
-        addButton.setIcon(new javax.swing.ImageIcon("D:\\Nest_1.0\\Nest_1.0\\img\\add.gif")); // NOI18N
         addButton.setText("Add");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,7 +201,6 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(230, 460, 399, 13);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("D:\\Nest_1.0\\Nest_1.0\\img\\add.gif")); // NOI18N
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(220, 100, 50, 30);
@@ -217,7 +212,7 @@ public class DictionaryUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(speakButton);
-        speakButton.setBounds(300, 70, 70, 23);
+        speakButton.setBounds(340, 70, 70, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -315,12 +310,12 @@ public class DictionaryUI extends javax.swing.JFrame {
 
     private void speakButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speakButtonActionPerformed
         // TODO add your handling code here:
-        String speak = jTextField1.getText();
+        /*String speak = jTextField1.getText();
         System.setProperty("mbrola.base", "mbrola");
         vm = VoiceManager.getInstance();
         v = vm.getVoice("mbrola_us1");
         v.allocate();
-        v.speak(speak);
+        v.speak(speak);*/
     }//GEN-LAST:event_speakButtonActionPerformed
 
     public int searchBinary(String w, ArrayList<String> k)

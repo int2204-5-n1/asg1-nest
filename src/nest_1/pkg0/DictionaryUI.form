@@ -70,9 +70,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Nest_1.0\Nest_1.0\img\find.gif"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Search"/>
       </Properties>
       <Events>
@@ -149,9 +146,6 @@
     </Container>
     <Component class="javax.swing.JButton" name="removeButton">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Nest_1.0\Nest_1.0\img\delete.gif"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Remove"/>
       </Properties>
       <Events>
@@ -165,9 +159,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="modifyButton">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Nest_1.0\Nest_1.0\img\edit.gif"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Modify"/>
       </Properties>
       <Events>
@@ -181,9 +172,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="addButton">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Nest_1.0\Nest_1.0\img\add.gif"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
       <Events>
@@ -263,9 +251,6 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Nest_1.0\Nest_1.0\img\add.gif"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="jLabel5"/>
       </Properties>
       <Constraints>
@@ -283,7 +268,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="300" y="70" width="70" height="-1"/>
+          <AbsoluteConstraints x="340" y="70" width="70" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
