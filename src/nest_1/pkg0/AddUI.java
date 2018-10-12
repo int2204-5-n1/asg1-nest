@@ -4,9 +4,10 @@ package nest_1.pkg0;
 
 public class AddUI extends javax.swing.JFrame {
 
-    DictionaryUI dic;
-    public AddUI(DictionaryUI d) {
+    Dictionary dic;
+    public AddUI(Dictionary d) {
         initComponents();
+        setTitle("Add");
         setLocation(400,150);
         dic = d;
     }
@@ -16,7 +17,6 @@ public class AddUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -27,12 +27,6 @@ public class AddUI extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(361, 234));
         setPreferredSize(new java.awt.Dimension(390, 300));
         getContentPane().setLayout(null);
-
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("ADDING MACHINE");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 10, 230, 28);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel2.setText("Your word:");
@@ -108,7 +102,6 @@ public class AddUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;

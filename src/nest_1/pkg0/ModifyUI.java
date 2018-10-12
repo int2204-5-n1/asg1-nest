@@ -3,9 +3,10 @@ package nest_1.pkg0;
 
 
 public class ModifyUI extends javax.swing.JFrame {
-    DictionaryUI dic;
-    public ModifyUI(DictionaryUI d) {
+    Dictionary dic;
+    public ModifyUI(Dictionary d) {
         initComponents();
+        setTitle("Modify");
         setLocation(400,150);
         dic = d;
     }
@@ -15,7 +16,6 @@ public class ModifyUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         w = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         nm = new javax.swing.JTextArea();
@@ -28,14 +28,8 @@ public class ModifyUI extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(312, 272));
         setPreferredSize(new java.awt.Dimension(400, 330));
         getContentPane().setLayout(null);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("     Modify Word");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(80, 0, 250, 32);
         getContentPane().add(w);
-        w.setBounds(78, 49, 194, 29);
+        w.setBounds(100, 40, 194, 29);
 
         jScrollPane1.setMinimumSize(new java.awt.Dimension(380, 280));
         jScrollPane1.setPreferredSize(new java.awt.Dimension(450, 340));
@@ -45,17 +39,17 @@ public class ModifyUI extends javax.swing.JFrame {
         jScrollPane1.setViewportView(nm);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(78, 131, 194, 110);
+        jScrollPane1.setBounds(100, 120, 194, 110);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel2.setText("Word");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 50, 50, 29);
+        jLabel2.setBounds(30, 40, 50, 29);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel3.setText("New Mean");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 160, 80, 33);
+        jLabel3.setBounds(0, 150, 80, 33);
 
         jButton1.setText("Commit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,14 +58,18 @@ public class ModifyUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
+<<<<<<< HEAD
         jButton1.setBounds(110, 250, 100, 25);
+=======
+        jButton1.setBounds(140, 240, 100, 23);
+>>>>>>> 5832a6446a529bf255ae8ab483d748c12a3ceb5f
         getContentPane().add(nw);
-        nw.setBounds(78, 94, 194, 30);
+        nw.setBounds(100, 80, 194, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel4.setText("New Word");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 90, 80, 31);
+        jLabel4.setBounds(0, 80, 80, 31);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -122,7 +120,6 @@ public class ModifyUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
