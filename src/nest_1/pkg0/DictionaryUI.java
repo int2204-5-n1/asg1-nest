@@ -3,6 +3,8 @@ package nest_1.pkg0;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -14,8 +16,8 @@ import javax.swing.UIManager;
 import com.sun.speech.freetts.VoiceManager;*/
 
 public class DictionaryUI extends javax.swing.JFrame {
-    final String EV = "D:\\Nest_1.0\\Nest_1.0\\src\\nest_1\\pkg0\\E_V.txt";
-    final String VE = "D:\\Nest_1.0\\Nest_1.0\\src\\nest_1\\pkg0\\V_E.txt";
+    final String EV = "C:\\Users\\Asus\\Desktop\\asg1-nest-master\\src\\nest_1\\pkg0\\E_V.txt";
+    final String VE = "C:\\Users\\Asus\\Desktop\\asg1-nest-master\\src\\nest_1\\pkg0\\V_E.txt";
     
    /// VoiceManager vm;
    // Voice v;
@@ -23,9 +25,7 @@ public class DictionaryUI extends javax.swing.JFrame {
     public DictionaryUI() {
         initComponents();
         setTitle("Nest-Dictionary");
-        
         setLocation(400,150);
-        //loadDataIntoMap(EV);
     }
 
     public void loadDataIntoMap(String path)
@@ -34,7 +34,6 @@ public class DictionaryUI extends javax.swing.JFrame {
         keys = new ArrayList<>();
         String line,word,s;
         mod = new DefaultListModel<>();
-        
         try
         {
             BufferedReader br = new BufferedReader(new FileReader(path));
@@ -50,11 +49,26 @@ public class DictionaryUI extends javax.swing.JFrame {
             }
             list.setModel(mod);
             br.close();
-        }catch (IOException e)
-        {
+        }catch (IOException e){
             e.printStackTrace();
         }
         
+    }
+    
+    public void write(String path){
+        BufferedWriter bw= null;
+        FileWriter fw= null;
+        try{
+            fw = new FileWriter(path);
+            bw = new BufferedWriter(fw);
+            for(int i=0;i<keys.size();i++){
+                bw.write(keys.get(i));
+                bw.write(hm.get(keys.get(i)));
+                bw.newLine();
+            }
+        }catch (Exception e) {
+                e.printStackTrace();
+            }   
     }
     
     @SuppressWarnings("unchecked")
@@ -75,7 +89,6 @@ public class DictionaryUI extends javax.swing.JFrame {
         evButton = new javax.swing.JRadioButton();
         veButton = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         speakButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,14 +121,14 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(jTextField1);
         jTextField1.setBounds(10, 100, 180, 30);
 
-        jButton1.setText("Search");
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\find.gif")); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(190, 100, 100, 30);
+        jButton1.setBounds(200, 100, 40, 30);
 
         list.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         list.setForeground(new java.awt.Color(0, 0, 204));
@@ -142,32 +155,32 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(301, 135, 328, 319);
 
-        removeButton.setText("Remove");
+        removeButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\delete.gif")); // NOI18N
         removeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeButtonActionPerformed(evt);
             }
         });
         getContentPane().add(removeButton);
-        removeButton.setBounds(300, 100, 110, 30);
+        removeButton.setBounds(300, 100, 60, 30);
 
-        modifyButton.setText("Modify");
+        modifyButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\edit.gif")); // NOI18N
         modifyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modifyButtonActionPerformed(evt);
             }
         });
         getContentPane().add(modifyButton);
-        modifyButton.setBounds(410, 100, 94, 30);
+        modifyButton.setBounds(370, 100, 60, 30);
 
-        addButton.setText("Add");
+        addButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\add.gif")); // NOI18N
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
         });
         getContentPane().add(addButton);
-        addButton.setBounds(510, 100, 94, 30);
+        addButton.setBounds(440, 100, 50, 30);
 
         evButton.setBackground(new java.awt.Color(255, 153, 0));
         buttonGroup1.add(evButton);
@@ -180,7 +193,7 @@ public class DictionaryUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(evButton);
-        evButton.setBounds(250, 40, 137, 23);
+        evButton.setBounds(250, 40, 139, 25);
 
         veButton.setBackground(new java.awt.Color(255, 204, 51));
         buttonGroup1.add(veButton);
@@ -193,7 +206,7 @@ public class DictionaryUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(veButton);
-        veButton.setBounds(450, 40, 137, 23);
+        veButton.setBounds(450, 40, 139, 25);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 51));
@@ -201,18 +214,14 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(230, 460, 399, 13);
 
-        jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(220, 100, 50, 30);
-
-        speakButton.setText("Speak");
+        speakButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\speaker2.png")); // NOI18N
         speakButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 speakButtonActionPerformed(evt);
             }
         });
         getContentPane().add(speakButton);
-        speakButton.setBounds(370, 70, 70, 23);
+        speakButton.setBounds(250, 100, 40, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -245,7 +254,6 @@ public class DictionaryUI extends javax.swing.JFrame {
 
     private void listValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listValueChanged
         // TODO add your handling code here:
-        
         if(!list.isSelectionEmpty()){
             int index = list.getSelectedIndex();
             String w = keys.get(index);
@@ -266,7 +274,7 @@ public class DictionaryUI extends javax.swing.JFrame {
             {
                 list.setSelectedIndex(i);
                 JScrollBar sb=jScrollPane2.getVerticalScrollBar();
-                sb.setValue(i*20);
+                sb.setValue(i*18);
                 return;
             }
         }
@@ -296,11 +304,13 @@ public class DictionaryUI extends javax.swing.JFrame {
     private void evButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_evButtonActionPerformed
         // TODO add your handling code here:
         loadDataIntoMap(EV);
+        check=true;
     }//GEN-LAST:event_evButtonActionPerformed
 
     private void veButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veButtonActionPerformed
         // TODO add your handling code here: 
         loadDataIntoMap(VE);
+        check=false;
     }//GEN-LAST:event_veButtonActionPerformed
 
     private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
@@ -335,6 +345,8 @@ public class DictionaryUI extends javax.swing.JFrame {
         int i = searchBinary(w,keys);
         keys.add(i,w);
         mod.add(i, w);
+        if(check) write(EV);
+            else write(VE);
     }
     
     public void removeWord(String w)
@@ -345,6 +357,8 @@ public class DictionaryUI extends javax.swing.JFrame {
             hm.remove(w);
             mod.removeElementAt(i);
         }
+        if(check) write(EV);
+            else write(VE);
     }
     
     public void modifyWord(String w, String nw, String nm)
@@ -364,6 +378,8 @@ public class DictionaryUI extends javax.swing.JFrame {
             removeWord(w);
             addWord(nw,nm);
         }
+        if(check) write(EV);
+            else write(VE);
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -373,10 +389,7 @@ public class DictionaryUI extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+                UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(DictionaryUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -400,6 +413,7 @@ public class DictionaryUI extends javax.swing.JFrame {
     private HashMap<String, String> hm;
     private ArrayList<String> keys;
     private DefaultListModel<String> mod;
+    private boolean check; // true EV false VE
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -407,7 +421,6 @@ public class DictionaryUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
