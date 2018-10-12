@@ -3,11 +3,10 @@ package nest_1.pkg0;
 
 
 public class RemoveUI extends javax.swing.JFrame {
-    Dictionary dic;
+    DictionaryUI dic;
     
-    public RemoveUI(Dictionary d) {
+    public RemoveUI(DictionaryUI d) {
         initComponents();
-        setTitle("Remove");
         setLocation(400,150);
         dic =d;
     }
@@ -20,6 +19,7 @@ public class RemoveUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(355, 250));
@@ -29,11 +29,11 @@ public class RemoveUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jLabel1.setText("Enter the word you want to remove");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 40, 210, 33);
+        jLabel1.setBounds(10, 49, 210, 33);
 
         jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(60, 80, 173, 33);
+        jTextField1.setBounds(10, 93, 173, 33);
 
         jButton1.setText("Commit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -42,7 +42,6 @@ public class RemoveUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-<<<<<<< HEAD
         jButton1.setBounds(10, 144, 110, 30);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -50,9 +49,6 @@ public class RemoveUI extends javax.swing.JFrame {
         jLabel2.setText("Remove Word");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(70, 10, 200, 30);
-=======
-        jButton1.setBounds(100, 130, 90, 30);
->>>>>>> 5832a6446a529bf255ae8ab483d748c12a3ceb5f
 
         jLabel3.setText("jLabel3");
         jLabel3.setMaximumSize(new java.awt.Dimension(10000, 10000));
@@ -109,6 +105,7 @@ public class RemoveUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
