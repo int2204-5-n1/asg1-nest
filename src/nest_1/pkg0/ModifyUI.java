@@ -64,7 +64,7 @@ public class ModifyUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(110, 250, 100, 23);
+        jButton1.setBounds(110, 250, 100, 25);
         getContentPane().add(nw);
         nw.setBounds(78, 94, 194, 30);
 

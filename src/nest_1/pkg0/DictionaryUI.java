@@ -12,15 +12,16 @@ import javax.swing.DefaultListModel;
 import javax.swing.JScrollBar;
 import javax.swing.UIManager;
 
-/*import com.sun.speech.freetts.Voice;
-import com.sun.speech.freetts.VoiceManager;*/
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
+import de.javasoft.plaf.synthetica.SyntheticaOrangeMetallicLookAndFeel;
 
 public class DictionaryUI extends javax.swing.JFrame {
-    final String EV = "C:\\Users\\Asus\\Desktop\\asg1-nest-master\\src\\nest_1\\pkg0\\E_V.txt";
-    final String VE = "C:\\Users\\Asus\\Desktop\\asg1-nest-master\\src\\nest_1\\pkg0\\V_E.txt";
+    final String EV = "C:\\Users\\Asus\\Desktop\\asg1-nest-master\\src\\database\\E_V.txt";
+    final String VE = "C:\\Users\\Asus\\Desktop\\asg1-nest-master\\src\\database\\V_E.txt";
     
-   /// VoiceManager vm;
-   // Voice v;
+    VoiceManager vm;
+    Voice v;
     
     public DictionaryUI() {
         initComponents();
@@ -66,6 +67,8 @@ public class DictionaryUI extends javax.swing.JFrame {
                 bw.write(hm.get(keys.get(i)));
                 bw.newLine();
             }
+            bw.close();
+            fw.close();
         }catch (Exception e) {
                 e.printStackTrace();
             }   
@@ -97,9 +100,9 @@ public class DictionaryUI extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Vani", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 0, 153));
-        jLabel1.setText("       Nest");
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\icon.png")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 10, 285, 81);
+        jLabel1.setBounds(20, 10, 220, 81);
 
         jTextField1.setText("Enter your word....");
         jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -122,13 +125,15 @@ public class DictionaryUI extends javax.swing.JFrame {
         jTextField1.setBounds(10, 100, 180, 30);
 
         jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\find.gif")); // NOI18N
+        jButton1.setToolTipText("Search something");
+        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(200, 100, 40, 30);
+        jButton1.setBounds(200, 100, 60, 30);
 
         list.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         list.setForeground(new java.awt.Color(0, 0, 204));
@@ -145,7 +150,7 @@ public class DictionaryUI extends javax.swing.JFrame {
         jScrollPane2.setViewportView(list);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(10, 135, 285, 319);
+        jScrollPane2.setBounds(10, 135, 250, 319);
 
         txtHTML.setBackground(new java.awt.Color(255, 255, 153));
         txtHTML.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -153,36 +158,38 @@ public class DictionaryUI extends javax.swing.JFrame {
         jScrollPane3.setViewportView(txtHTML);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(301, 135, 328, 319);
+        jScrollPane3.setBounds(269, 135, 360, 319);
 
         removeButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\delete.gif")); // NOI18N
+        removeButton.setToolTipText("Delete");
         removeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeButtonActionPerformed(evt);
             }
         });
         getContentPane().add(removeButton);
-        removeButton.setBounds(300, 100, 60, 30);
+        removeButton.setBounds(370, 100, 60, 30);
 
         modifyButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\edit.gif")); // NOI18N
+        modifyButton.setToolTipText("Modified");
         modifyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modifyButtonActionPerformed(evt);
             }
         });
         getContentPane().add(modifyButton);
-        modifyButton.setBounds(370, 100, 60, 30);
+        modifyButton.setBounds(470, 100, 60, 30);
 
         addButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\add.gif")); // NOI18N
+        addButton.setToolTipText("Add");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
         });
         getContentPane().add(addButton);
-        addButton.setBounds(440, 100, 50, 30);
+        addButton.setBounds(560, 100, 57, 30);
 
-        evButton.setBackground(new java.awt.Color(255, 153, 0));
         buttonGroup1.add(evButton);
         evButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         evButton.setForeground(new java.awt.Color(0, 0, 153));
@@ -195,7 +202,6 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(evButton);
         evButton.setBounds(250, 40, 139, 25);
 
-        veButton.setBackground(new java.awt.Color(255, 204, 51));
         buttonGroup1.add(veButton);
         veButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         veButton.setForeground(new java.awt.Color(0, 0, 153));
@@ -214,14 +220,15 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(230, 460, 399, 13);
 
-        speakButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\speaker2.png")); // NOI18N
+        speakButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\speaker3.png")); // NOI18N
+        speakButton.setToolTipText("Speak out");
         speakButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 speakButtonActionPerformed(evt);
             }
         });
         getContentPane().add(speakButton);
-        speakButton.setBounds(250, 100, 40, 30);
+        speakButton.setBounds(290, 100, 50, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -258,7 +265,7 @@ public class DictionaryUI extends javax.swing.JFrame {
             int index = list.getSelectedIndex();
             String w = keys.get(index);
             txtHTML.setText(hm.get(w));
-        }
+            }
     }//GEN-LAST:event_listValueChanged
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
@@ -274,7 +281,7 @@ public class DictionaryUI extends javax.swing.JFrame {
             {
                 list.setSelectedIndex(i);
                 JScrollBar sb=jScrollPane2.getVerticalScrollBar();
-                sb.setValue(i*18);
+                sb.setValue(i*19);
                 return;
             }
         }
@@ -320,12 +327,17 @@ public class DictionaryUI extends javax.swing.JFrame {
 
     private void speakButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speakButtonActionPerformed
         // TODO add your handling code here:
-        /*String speak = jTextField1.getText();
+        String speak;
+        if(list.isSelectionEmpty()) speak= jTextField1.getText();
+        else {
+            int index=list.getSelectedIndex();
+            speak = keys.get(index);
+        }
         System.setProperty("mbrola.base", "mbrola");
         vm = VoiceManager.getInstance();
         v = vm.getVoice("mbrola_us1");
         v.allocate();
-        v.speak(speak);*/
+        v.speak(speak);
     }//GEN-LAST:event_speakButtonActionPerformed
 
     public int searchBinary(String w, ArrayList<String> k)
@@ -389,7 +401,10 @@ public class DictionaryUI extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(DictionaryUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -400,8 +415,28 @@ public class DictionaryUI extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(DictionaryUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         
+         try 
+        {
+            UIManager.setLookAndFeel(new SyntheticaOrangeMetallicLookAndFeel());
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+        //</editor-fold>
+        // Loading...
+        load ss = new load();
+        ss.setVisible(true);
+        try{
+            for(int i=0;i<=100;i++){
+                Thread.sleep(40);
+                ss.lbl.setText(Integer.toString(i)+"%");
+                if(i==100) ss.dispose();
+            }
+        }catch(Exception e){
+            
+        }
         /* Create and display the form */
         
         java.awt.EventQueue.invokeLater(new Runnable() {
