@@ -115,7 +115,7 @@ public class DictionaryUI extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Vani", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 0, 153));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\nest1.0.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nest_1/img/nest1.0.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-20, 10, 300, 100);
 
@@ -139,7 +139,7 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(jTextField1);
         jTextField1.setBounds(10, 100, 180, 30);
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\find.gif")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nest_1/img/find.gif"))); // NOI18N
         jButton1.setToolTipText("Search something");
         jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -175,7 +175,7 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(269, 135, 360, 319);
 
-        removeButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\delete.gif")); // NOI18N
+        removeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nest_1/img/delete.gif"))); // NOI18N
         removeButton.setToolTipText("Delete");
         removeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,7 +185,7 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(removeButton);
         removeButton.setBounds(330, 100, 60, 30);
 
-        modifyButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\edit.gif")); // NOI18N
+        modifyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nest_1/img/edit.gif"))); // NOI18N
         modifyButton.setToolTipText("Modified");
         modifyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,7 +195,7 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(modifyButton);
         modifyButton.setBounds(410, 100, 60, 30);
 
-        addButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\add.gif")); // NOI18N
+        addButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nest_1/img/add.gif"))); // NOI18N
         addButton.setToolTipText("Add");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -235,7 +235,7 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(230, 460, 399, 13);
 
-        speakButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\speaker3.png")); // NOI18N
+        speakButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nest_1/img/speaker3.png"))); // NOI18N
         speakButton.setToolTipText("Speak out");
         speakButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,7 +245,7 @@ public class DictionaryUI extends javax.swing.JFrame {
         getContentPane().add(speakButton);
         speakButton.setBounds(270, 100, 50, 30);
 
-        history.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\his.png")); // NOI18N
+        history.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nest_1/img/his.png"))); // NOI18N
         history.setToolTipText("History");
         history.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

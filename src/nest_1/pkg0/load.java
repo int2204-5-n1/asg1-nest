@@ -36,7 +36,7 @@ public class load extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(null);
 
-        gif.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\turningFlower.gif")); // NOI18N
+        gif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nest_1/img/turningFlower.gif"))); // NOI18N
         getContentPane().add(gif);
         gif.setBounds(480, 240, 70, 60);
 
@@ -45,7 +45,7 @@ public class load extends javax.swing.JFrame {
         getContentPane().add(lbl);
         lbl.setBounds(240, 250, 90, 60);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\asg1-nest-master\\img\\background1.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nest_1/img/background1.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, -110, 810, 530);
 
