@@ -60,7 +60,7 @@ public class AddUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(156, 200, 100, 23);
+        jButton1.setBounds(156, 200, 100, 25);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
